@@ -36,13 +36,39 @@ function calcRoute(route, id) {
 
     directionsRenderer.setMap(map);
 
+    var rt_length = route.coordinates.length
     var start = route.coordinates[0];
-    var end = route.coordinates[1];
+    var end = route.coordinates[rt_length-1];
+
     var request = {
         origin: start,
         destination: end,
         travelMode: 'WALKING'
     };
+
+    if(rt_length > 2)
+    {
+        var waypts = [];
+
+        for (i = 1; i < rt_length-1; i++) {
+
+            waypts.push(
+                {
+                    location: route.coordinates[i],
+                    stopover: false
+                }
+            )
+        }
+
+        request = {
+            origin: start,
+            destination: end,
+            travelMode: 'WALKING',
+            waypoints: waypts
+        };
+    }
+
+
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
@@ -86,18 +112,21 @@ function initMap() {
 function showRoute(route) {
     clickedNode = true;
     if (active_route !== null && active_route !== route._id) {
-        $("#" + active_route).fadeOut();
+        $("#" + active_route).animate({right: '-400px'});
+        setTimeout(function () {
+            $("#" + route._id).animate({right: '0px'});
+            active_route = route._id;
+        }, 500)
+    } else {
+        $("#" + route._id).animate({right: '0px'});
+        active_route = route._id;
     }
-    $("#" + route._id).fadeIn();
-    active_route = route._id;
-    // let box = document.getElementById(route._id);
-    // box.css("display": "block");
 }
 
 $(window).click(function() {
     setTimeout(function () {
         if (active_route !== null && !clickedNode) {
-            $("#" + active_route).fadeOut();
+            $("#" + active_route).animate({right: '-400px'});
             active_route = null;
         } else {
             clickedNode = false;

@@ -21,19 +21,23 @@ a {
 }
 
 .route_container {
-  display:none;
   position: absolute;
-  float:right;
   width: 400px;
   height: 100%;
   top:0;
-  right:0;
+  right:-400px;
   background-color: #eee;
 }
 
 .route_container .header {
+  text-align: left;
+  padding: 15px;
   height:56px;
   background-color: #333;
   width:100%;
   color: #eee;
+}
+
+.logo {
+  width: 35px;
 }
