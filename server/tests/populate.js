@@ -9,7 +9,10 @@ db.on('error', (error) => console.error(error));
 db.once('open', () => {
     console.log("Connected to database");
     populate();
-    // db.close();
+    setTimeout(function() {
+        db.close();
+    }, 200);
+
 });
 
 function populate() {

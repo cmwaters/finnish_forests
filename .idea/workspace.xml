@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f684b37a-3b2d-476d-a6a5-d31fe1dac2f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/javascripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/javascripts/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/javascripts/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/javascripts/jquery-3.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/stylesheets/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/stylesheets/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tests/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/views/dashboard.pug" beforeDir="false" afterPath="$PROJECT_DIR$/server/views/dashboard.pug" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,26 +28,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/public/stylesheets/dashboard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="239">
               <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/public/javascripts/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="929">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="319">
+              <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/tests/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-753">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="189">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -252,7 +246,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/public/javascripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/tests" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -267,6 +261,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/tests" />
       <recent name="$PROJECT_DIR$/server/public/javascripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -474,14 +469,29 @@
       <option name="project" value="LOCAL" />
       <updated>1573924997334</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="expanded on frontend dashboard functionality">
+      <created>1573937336273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573937336273</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated data points">
+      <created>1573937587214</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573937587214</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40839000" />
+    <option name="totallyTimeSpent" value="41368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -512,7 +522,9 @@
     <MESSAGE value="added database scripts for development" />
     <MESSAGE value="restructured the front end directories" />
     <MESSAGE value="fixed css bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed css bug" />
+    <MESSAGE value="expanded on frontend dashboard functionality" />
+    <MESSAGE value="updated data points" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated data points" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -668,22 +680,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/public/stylesheets/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="239">
           <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-753">
-          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/public/javascripts/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="929">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="319">
+          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
