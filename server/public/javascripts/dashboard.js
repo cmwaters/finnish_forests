@@ -118,6 +118,7 @@ function showRoute(route) {
             active_route = route._id;
         }, 500)
     } else {
+        $('#map').animate({width: "-=400px"});
         $("#" + route._id).animate({right: '0px'});
         active_route = route._id;
     }

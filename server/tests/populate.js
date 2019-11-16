@@ -2,6 +2,11 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const routes = require("./data");
 const RouteModel = require('../models/routes');
+const SensorModel = require('../models/sensors');
+const json_data = require('../../data/counter_simple');
+
+console.log(json_data);
+let sensor_data = json_data;//JSON.parse(json_data);
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -25,6 +30,20 @@ function populate() {
                 coordinates: routes[i].coordinates
             });
             route.save()
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+    for (let j = 0; j < sensor_data.length; j++) {
+        try {
+            let sensor = new SensorModel({
+                latitude: sensor_data[j].latitude,
+                longitude: sensor_data[j].longitude,
+                hourly: sensor_data[j].hourly,
+                daily: sensor_data[j].daily,
+                monthly: sensor_data[j].monthly
+            });
+            sensor.save()
         } catch (e) {
             console.log(e.message);
         }

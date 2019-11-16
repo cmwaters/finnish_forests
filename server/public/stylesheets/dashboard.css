@@ -31,9 +31,9 @@ a {
 
 .route_container .header {
   text-align: left;
-  padding: 15px;
+  padding: 18px;
   height:56px;
-  background-color: #333;
+  background-color: #212529;
   width:100%;
   color: #eee;
 }

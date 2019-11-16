@@ -9,10 +9,21 @@ const routeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    prediction: {
+        type: [Number]
+    },
     coordinates: [{
         lat: {type: Number, required: true},
         lng: {type: Number, required: true}
-    }]
+    }],
+    waypoints: [{
+        lat: {type: Number},
+        lng: {type: Number}
+    }],
+    last_updated: {
+        type: Date,
+        default: Date.now()
+    }
 
 });
 
