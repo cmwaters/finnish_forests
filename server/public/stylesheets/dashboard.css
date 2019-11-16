@@ -1,3 +1,18 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 50;
+}
+
+a {
+  color: #00B7FF;
+}
+
 #map_container {
   position:relative;
   margin:auto;
