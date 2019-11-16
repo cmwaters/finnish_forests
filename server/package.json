@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ../server/bin/www",
-    "nodemon": "nodemon ../server/bin/www"
+    "nodemon": "nodemon ../server/bin/www",
+    "populate": "node tests/populate.js",
+    "clear": "node tests/clear.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -18,6 +20,7 @@
     "bootstrap": "4.3"
   },
   "devDependencies": {
+    "mongodb-memory-server": "^6.0.1",
     "nodemon": "^1.19.4"
   }
 }

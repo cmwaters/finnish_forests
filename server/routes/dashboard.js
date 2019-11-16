@@ -19,7 +19,17 @@ router.post('/', async (req, res) => {
         route.save();
         res.redirect(req.originalUrl)
     } catch (e) {
-        res.status(400).json({ msg: e.message });
+        res.status(500).json({ msg: e.message });
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        let route = await RouteModel.findById(req.params.id);
+        route.remove();
+        res.redirect(req.originalUrl);
+    } catch (e) {
+        res.status(500).json({ msg: e.message })
     }
 });
 

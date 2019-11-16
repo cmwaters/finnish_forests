@@ -2,11 +2,24 @@ GET http://localhost:3000/api/routes
 
 ###
 
+GET http://localhost:3000/api/routes/5dcfee00db67fc2d52bd7baf
+
+###
+
 POST http://localhost:3000/api/routes
 Content-Type: application/json
 
 {
-  "name": "Jungle Trek"
+  "name": "Jungle Trek",
+  "status": "Open",
+  "coordinates" : [
+    [10,10],
+    [20,20]
+  ]
 }
+
+###
+
+DELETE http://localhost:3000/api/routes/5dcfd17950757c289dd7b432
 
 ###
