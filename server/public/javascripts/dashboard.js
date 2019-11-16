@@ -15,6 +15,10 @@ var counters = [
 
 function putMarker(value, index, array) {
     var marker = new google.maps.Marker({position: value, map: map});
+    
+    marker.addListener('click', function() {
+        alert(marker.getPosition());
+      });
 }
 
 function calcRoute() {
@@ -29,13 +33,25 @@ function calcRoute() {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
         }
+
+        var marker1 = new google.maps.Marker({position: start, map: map});
+        var marker2 = new google.maps.Marker({position: end, map: map});
+    
+        marker1.addListener('click', function() {
+            alert(marker1.getPosition());
+        });
+
+        marker2.addListener('click', function() {
+            alert(marker2.getPosition());
+        });
+
     });
 }
 
 function initMap() {
 
     directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
 
     var center = {lat: 60.277593, lng: 24.593690};
     var map_container = document.getElementById('map_container');
@@ -43,14 +59,16 @@ function initMap() {
 
     directionsRenderer.setMap(map);
 
-    counters.forEach(putMarker);
+    //counters.forEach(putMarker);
 
     calcRoute();
 
+    /*
     let new_height = $(window).height() - $('.navbar').height();
     $('#map_container').height(new_height);
 
     alert($(window).height());
     alert($('#map_container').height());
+    */
 
 }
