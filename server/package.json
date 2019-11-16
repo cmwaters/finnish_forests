@@ -15,8 +15,7 @@
     "mongoose": "^5.7.11",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
-    "bootstrap": "4.3",
-    "pug": "2.0.0-beta11"
+    "bootstrap": "4.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

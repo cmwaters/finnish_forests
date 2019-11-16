@@ -2,9 +2,12 @@ var express = require('express');
 var router = express.Router();
 const data = require('./data');
 
-/* GET users listing. */
+router.get('/', function(req, res) {
+    res.render('dashboard', {title: 'Dashboard'})
+});
+
 router.get('/routes', function(req, res) {
-    res.render('index', {data})
+    res.render('dashboard', {title: 'Dashboard routes', routes: data})
 });
 
 router.get('/routes/:id', function(req, res) {
