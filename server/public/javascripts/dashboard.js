@@ -1,6 +1,6 @@
 var map;
 var directionsService;
-var directctionsRender;
+//var directctionsRender;
 
 var counters = [
     {lat: 60.303525451006834, lng: 24.550391008969527},
@@ -21,9 +21,15 @@ function putMarker(value, index, array) {
       });
 }
 
-function calcRoute() {
+function calcRoute(start, end) {
+    
+    var directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
+    directionsRenderer.setMap(map);
+
+    /*
     var start = counters[0];
     var end = counters[1];
+    
     var waypts = [];
     waypts.push(
         {
@@ -31,16 +37,20 @@ function calcRoute() {
             stopover: false
         }
     )
+    */
+
     var request = {
         origin: start,
         destination: end,
-        travelMode: 'WALKING',
-        waypoints: waypts
+        travelMode: 'WALKING'
+        //,        waypoints: waypts
     };
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
         }
+
+        
 
         var marker1 = new google.maps.Marker({position: start, map: map});
         var marker2 = new google.maps.Marker({position: end, map: map});
@@ -54,22 +64,23 @@ function calcRoute() {
         });
 
     });
+
 }
 
 function initMap() {
 
     directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
 
     var center = {lat: 60.277593, lng: 24.593690};
     var map_container = document.getElementById('map_container');
     map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 32});
 
-    directionsRenderer.setMap(map);
+    
 
     //counters.forEach(putMarker);
 
-    calcRoute();
+    calcRoute(counters[0],counters[1]);
+    calcRoute(counters[3],counters[4]);
 
     /*
     google.maps.event.addListener(map, 'click', function(event) {
