@@ -1,6 +1,6 @@
 const routes = [
     {
-        name: "Route 1",
+        name: "Punarinnankierros Trail - 2.4 km",
         status: "Open",
         coordinates: [
             {
@@ -24,7 +24,7 @@ const routes = [
         ]
     },
     {
-        name: "Route 2",
+        name: "Korpinkierros Trail - 6.4 km",
         status: "Open",
         coordinates: [
             {
@@ -48,7 +48,7 @@ const routes = [
         ]
     },
     {
-        name: "Route 3",
+        name: "Haukankierros Trail - 8.5 km",
         status: "Open",
         coordinates: [
             {
@@ -80,7 +80,7 @@ const routes = [
         ]
     },
     {
-        name: "Route 4",
+        name: "Kaarniaispolku Nature Trail - 10.2 km",
         status: "Open",
         coordinates: [
             {
@@ -120,7 +120,7 @@ const routes = [
         ]
     },
     {
-        name: "Route 5",
+        name: "Veikkola-Salmi Trail - 13 km",
         status: "Open",
         coordinates: [
             {
@@ -152,7 +152,7 @@ const routes = [
         ]
     },
     {
-        name: "Route 6",
+        name: "Haukkalampi-Haltia Trail - 5 km",
         status: "Open",
         coordinates: [
             {
