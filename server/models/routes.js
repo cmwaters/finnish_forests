@@ -9,10 +9,10 @@ const routeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    coordinates: {
-        type: [[Number]],
-        required: true
-    }
+    coordinates: [{
+        lat: {type: Number, required: true},
+        lng: {type: Number, required: true}
+    }]
 
 });
 

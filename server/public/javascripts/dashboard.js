@@ -1,6 +1,15 @@
+
+
 var map;
+var marker = [];
 var directionsService;
-var directctionsRender;
+var active_route = null;
+var clickedNode = false;
+
+var routes = document.currentScript.getAttribute('routes');
+var JSONroutes = JSON.parse(routes);
+var start = JSONroutes[1].coordinates[0];
+var end = JSONroutes[1].coordinates[1];
 
 var counters = [
     {lat: 60.303525451006834, lng: 24.550391008969527},
@@ -15,11 +24,20 @@ var counters = [
 
 function putMarker(value, index, array) {
     var marker = new google.maps.Marker({position: value, map: map});
+
+    marker.addListener('click', function() {
+        alert(marker.getPosition());
+    });
 }
 
-function calcRoute() {
-    var start = counters[0];
-    var end = counters[1];
+function calcRoute(route, id) {
+
+    var directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
+
+    directionsRenderer.setMap(map);
+
+    var start = route.coordinates[0];
+    var end = route.coordinates[1];
     var request = {
         origin: start,
         destination: end,
@@ -29,28 +47,61 @@ function calcRoute() {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
         }
+
+        var marker1 = new google.maps.Marker({position: start, map: map});
+        var marker2 = new google.maps.Marker({position: end, map: map});
+
+        marker1.addListener('click', function() {
+            showRoute(route);
+        });
+
+        marker2.addListener('click', function() {
+            showRoute(route);
+        });
+
     });
 }
 
 function initMap() {
 
     directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer();
 
     var center = {lat: 60.277593, lng: 24.593690};
     var map_container = document.getElementById('map_container');
-    map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 32});
+    map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 24});
 
-    directionsRenderer.setMap(map);
 
-    counters.forEach(putMarker);
+    //counters.forEach(putMarker);
 
-    calcRoute();
+    for (let i = 0; i < JSONroutes.length; i++) {
+        calcRoute(JSONroutes[i], i);
+    }
 
-    let new_height = $(window).height() - $('.navbar').height();
+    let new_height = $(window).height() - $('.navbar').outerHeight();
     $('#map_container').height(new_height);
 
-    alert($(window).height());
-    alert($('#map_container').height());
 
 }
+
+function showRoute(route) {
+    clickedNode = true;
+    if (active_route !== null && active_route !== route._id) {
+        $("#" + active_route).fadeOut();
+    }
+    $("#" + route._id).fadeIn();
+    active_route = route._id;
+    // let box = document.getElementById(route._id);
+    // box.css("display": "block");
+}
+
+$(window).click(function() {
+    setTimeout(function () {
+        if (active_route !== null && !clickedNode) {
+            $("#" + active_route).fadeOut();
+            active_route = null;
+        } else {
+            clickedNode = false;
+        }
+    }, 200)
+});
+

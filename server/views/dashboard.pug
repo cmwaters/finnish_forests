@@ -2,6 +2,9 @@ extends header
 
 block content
   #map_container
-  #route_container
-  script(src="/javascripts/dashboard.js")
+  each route in routes
+      div.route_container(id=route._id)
+          .header
+              h1 #{route.name}
+  script(src="/javascripts/dashboard.js" routes=routes)
   script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzaieIWmZLqo3wQ00iTSWuz56qQ4D_cc&callback=initMap', async, defer)
