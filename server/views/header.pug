@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title Finland Forests
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.3/examples/sign-in/')
+    script(src="/javascripts/jquery-3.3.1.js")
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    block head
+    
+  body.text-center
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand(href='#') Navbar
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Dropdown
+            .dropdown-menu(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              .dropdown-divider
+              a.dropdown-item(href='#') Something else here
+          li.nav-item
+            a.nav-link.disabled(href='#') Disabled
+
+    block content
