@@ -24,10 +24,18 @@ function putMarker(value, index, array) {
 function calcRoute() {
     var start = counters[0];
     var end = counters[1];
+    var waypts = [];
+    waypts.push(
+        {
+            location: {lat: 60.244999, lng: 24.511976},
+            stopover: false
+        }
+    )
     var request = {
         origin: start,
         destination: end,
-        travelMode: 'WALKING'
+        travelMode: 'WALKING',
+        waypoints: waypts
     };
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
@@ -62,6 +70,19 @@ function initMap() {
     //counters.forEach(putMarker);
 
     calcRoute();
+
+    /*
+    google.maps.event.addListener(map, 'click', function(event) {
+        placeMarker(event.latLng);
+     });
+     
+     function placeMarker(location) {
+         var marker3 = new google.maps.Marker({
+             position: location, 
+             map: map
+         });
+     }
+     */
 
     /*
     let new_height = $(window).height() - $('.navbar').height();
