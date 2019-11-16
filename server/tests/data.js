@@ -106,7 +106,7 @@ const routes = [
         ]
     },
     {
-        name: "Haukkalampi-Haltia - 5 km",
+        name: "Haukkalampi-Haltia Trail - 5 km",
         status: "Open",
         coordinates: [
             {
