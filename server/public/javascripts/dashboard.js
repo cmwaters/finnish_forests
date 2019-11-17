@@ -38,7 +38,14 @@ var uniqueId = function() {
     return ++currentId;
 }
 
+var currentZ = 0;
+var uniqueZ = function() {
+    return ++currentZ;
+}
+
+
 var markers = {};
+var directions = {};
 
 function putMarker(value, index, array) {
     
@@ -64,11 +71,13 @@ function calcRoute(route, id) {
     var color =  rt_idx % colors.length;
     //alert(color)
 
+
     var directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
         polylineOptions: {
-        strokeColor: colors[color],
-        strokeOpacity: 0.7
+        strokeColor: '#212529',
+        strokeOpacity: 0.7,
+        id: route._id
       }
     });
 
@@ -126,6 +135,7 @@ function calcRoute(route, id) {
         });
 
     });
+    directions[route._id] = directionsRenderer;
 }
 
 function initMap() {
@@ -150,21 +160,59 @@ function initMap() {
 }
 
 function showRoute(route) {
+    if(active_route !== null)
+    {
+        directions[active_route].setMap(null);
+        directions[active_route].setOptions({
+            polylineOptions: {
+                strokeColor: '#212529'
+            }
+            });
+        directions[active_route].setMap(map);
+    }
+
+        directions[route._id].setMap(null);
+        directions[route._id].setOptions({
+            polylineOptions: {
+                strokeColor: '#DC143C',
+                zIndex: uniqueZ()
+            }
+            });
+        directions[route._id].setMap(map);
+
     if (active_route !== null && active_route !== route._id) {
+
+
         $("#" + active_route).animate({right: '-400px'});
         setTimeout(function () {
             $("#" + route._id).animate({right: '0px'});
             active_route = route._id;
         }, 500)
+
     } else {
+
         $('#map').animate({width: "-=400px"});
-        $("#" + route._id).animate({right: '0px'});
+        $("#" + route._id).animate({right: '0px'});        
+        
         active_route = route._id;
     }
+
 }
 
 $(".close_route").click(function() {
     $("#" + active_route).animate({right: '-400px'});
+
+    directions[active_route].setMap(null);
+
+    directions[active_route].setOptions({
+          polylineOptions: {
+            strokeColor: '#212529'
+          }
+        });
+      
+    directions[active_route].setMap(map);
+    
     active_route = null;
+
 });
 
