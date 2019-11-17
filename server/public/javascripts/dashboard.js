@@ -135,7 +135,7 @@ function showRoute(route) {
 }
 
 $(".close_route").click(function() {
-    $("#" + route._id).animate({right: '-400px'});
+    $("#" + active_route).animate({right: '-400px'});
     active_route = null;
 });
 
