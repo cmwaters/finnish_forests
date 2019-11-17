@@ -10,10 +10,21 @@ google.charts.load('current', {'packages':['corechart']});
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
+
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = dd + '.' + mm + '.' + yyyy;
+
+      
+
       function drawChart() {
 
         // Set chart options
-        var options = {'title':'Traffic prediction today',
+
+        var options = {'title':'Traffic prediction for ' + today,
                        'width':400,
                        'height':300,
                        'colors': ['Green'],
@@ -46,7 +57,7 @@ google.charts.load('current', {'packages':['corechart']});
             var twod = [];
             for(let i = 0; i < predictions.length;i++)
             {
-              twod.push([i,predictions[i]]);
+              twod.push([6 + i,predictions[i]]);
             }
             console.log(twod);
             data.addRows(twod);
