@@ -49,7 +49,8 @@ a {
 }
 
 .close_route {
+  cursor: pointer;
   width:22px;
-  margin-top:-35px;
+  margin-top:-30px;
   float:right;
 }
