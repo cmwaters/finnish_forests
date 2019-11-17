@@ -30,15 +30,18 @@ function putMarker(value, index, array) {
     });
 }
 
-var colors = ["MediumSeaGreen", "DarkGoldenRod", "Coral", "MediumVioletRed", "Yellow", "DarkCyan", "Black", "CornflowerBlue"]
-var rt_idx = 0
+var colors = ['#6B5B95','#FEB236','#D64161','#FF7525']
+var rt_idx = 1;
 
 function calcRoute(route, id) {
+
+    var color =  rt_idx % colors.length;
+    alert(color)
 
     var directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
         polylineOptions: {
-        strokeColor: colors[rt_idx],
+        strokeColor: colors[color],
         strokeOpacity: 0.7
       }
     });
