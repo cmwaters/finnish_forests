@@ -68,9 +68,7 @@ router.delete('/routes/:id', async (req, res) => {
 
 async function update_prediction(route) {
   let prediction_values = [];
-  console.log(route.name);
   let closest_sensor = await find_closest_sensor(route);
-  console.log(closest_sensor.latitude);
   let now = new Date;
   let day = 6;
   if (now.getDay() !== 0) {

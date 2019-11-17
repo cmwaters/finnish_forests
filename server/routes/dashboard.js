@@ -23,10 +23,10 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
-        let route = await RouteModel.findById(req.params.id);
-        console.log(route.name)
+        const route = await RouteModel.findById(req.params.id);
+        console.log(route.name);
         route.remove();
         //res.redirect(req.baseUrl + '/dashboard');
         
@@ -34,6 +34,36 @@ router.delete('delete/:id', async (req, res) => {
         
     } catch (e) {
         res.status(500).json({ msg: e.message })
+    }
+});
+
+router.get('/:id/open', async (req, res) => {
+    try {
+        console.log(req.params.id);
+        console.log("Opening Route");
+        const route = await RouteModel.findById(req.params.id);
+        console.log(route.name);
+        route.status = "Open";
+        route.save();
+        res.redirect(req.baseUrl);
+        res.end();
+    } catch(e) {
+        res.status(404).json({ msg: e.message});
+        res.end();
+    }
+});
+
+router.get('/:id/close', async (req, res) => {
+    try {
+        console.log("Closing Route");
+        const route = await RouteModel.findById(req.params.id);
+        route.status = "Closed";
+        route.save();
+        res.redirect(req.baseUrl);
+        res.end();
+    } catch(e) {
+        res.status(404).json({ msg: e.message});
+        res.end();
     }
 });
 
