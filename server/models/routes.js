@@ -27,8 +27,11 @@ const routeSchema = new mongoose.Schema({
     ranking: {
         type: Number,
         default: 0
+    },
+    duration: {type: String},
+    alerts: {
+        type: [String]
     }
-
 });
 
 module.exports = mongoose.model('RouteModel', routeSchema );
