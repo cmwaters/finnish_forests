@@ -175,6 +175,52 @@ const routes = [
             }
         ]
     },
+    {
+        name: "Matalajarvi Trail - 5.1 km",
+        status: "Open",
+        coordinates: [
+            {
+                lat: 60.249433,
+                lng: 24.706137,
+            },
+            {
+                lat: 60.268440,
+                lng: 24.667974,
+            }
+        ]
+    },
+    {
+        name: "Kaarniaispolku Trail - 11.8 km",
+        status: "Open",
+        coordinates: [
+            {
+                lat: 60.298740,
+                lng: 24.448652,
+            },
+            {
+                lat: 60.313926,
+                lng: 24.461803,
+            },
+            {
+                lat: 60.312009,
+                lng: 24.444428,
+            },
+            {
+                lat: 60.299431,
+                lng: 24.446514,
+            }
+        ],
+        waypoints: [
+            {
+                lat: 60.313926,
+                lng: 24.461803,
+            },
+            {
+                lat: 60.312009,
+                lng: 24.444428,
+            }
+        ]
+    },
 ];
 
 // Counters:
