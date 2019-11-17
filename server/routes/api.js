@@ -9,11 +9,25 @@ router.get('/routes', async (req, res) => {
     const routes = await RouteModel.find();
     for (let i = 0; i < routes.length; i++) {
       if (routes[i].prediction.length === 0) {
-        routes[i].prediction = update_prediction(routes[i]);
+        let result = update_prediction(routes[i]);
+        routes[i].prediction = result;
+        var sum = 0;
+        for (let j = 0; j < result.length; j++) {
+          sum += result[j];
+        }
+        routes[i].ranking = sum;
+        routes[i].last_updated = Date.now();
         routes[i].save();
       }
     }
-    res.json(routes);
+    await RouteModel.find({}).sort({ranking: -1}).exec(function(err, routes){
+      if (err) {
+        res.status(500).json({msg: err.message})
+      } else {
+        res.json(routes);
+      }
+    });
+
   } catch (e) {
     res.status(500).json({ msg: e.message })
   }

@@ -26,6 +26,7 @@ async function setup() {
                 sum += result[j];
             }
             routes[i].ranking = sum;
+            routes[i].last_updated = Date.now();
             routes[i].save();
         }
     }
