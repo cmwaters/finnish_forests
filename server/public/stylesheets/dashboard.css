@@ -27,6 +27,8 @@ a {
   top:0;
   right:-400px;
   background-color: #eee;
+  color:  #333;
+  text-align: left;
 }
 
 .route_container .header {
@@ -37,6 +39,12 @@ a {
   width:100%;
   color: #eee;
 }
+
+.route_container p {
+  padding: 15px;
+}
+
+
 
 .logo {
   width: 35px;
