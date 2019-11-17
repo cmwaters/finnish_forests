@@ -5,6 +5,7 @@ const routeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    description: {type: String},
     status: {
         type: String,
         required: true

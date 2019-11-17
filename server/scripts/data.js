@@ -163,7 +163,7 @@ const routes = [
     },
     {
         name: "Haukkalampi-Haltia Trail - 5 km",
-        status: "Open",
+        status: "Closed",
         duration: "2 hours",
         description: "Specially designed for schoolchildren ",
         coordinates: [
@@ -185,6 +185,9 @@ const routes = [
                 latitude: 60.300252,
                 longitude: 24.567617
             }
+        ],
+        alerts: [
+            "This section is closed over nursing season (March - April)"
         ]
     },
     {
