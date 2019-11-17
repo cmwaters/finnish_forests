@@ -20,7 +20,7 @@ router.get('/routes', async (req, res) => {
         routes[i].save();
       }
     }
-    await RouteModel.find({}).sort({ranking: -1}).exec(function(err, routes){
+    await RouteModel.find({}).sort({ranking: 1}).exec(function(err, routes){
       if (err) {
         res.status(500).json({msg: err.message})
       } else {
