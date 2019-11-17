@@ -21,13 +21,39 @@ var counters = [
     {lat: 60.24969716104745, lng: 24.698307563459544}
 ]
 
-function putMarker(value, index, array) {
-    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-    var marker = new google.maps.Marker({position: value, map: map, icon: image });
+var toSet = false;
+function showCounters(){
 
+    Object.keys(markers).forEach(function(key) {
+        console.log(key, markers[key]);
+        markers[key].setVisible(toSet); 
+    });
+
+    toSet = !toSet;
+
+}
+
+var currentId = 0;
+var uniqueId = function() {
+    return ++currentId;
+}
+
+var markers = {};
+
+function putMarker(value, index, array) {
+    
+    var id = uniqueId(); // get new id
+
+    var image = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+    var marker = new google.maps.Marker({position: value, map: map, icon: image, id: id });
+    
+    markers[id] = marker;
+
+    /*
     marker.addListener('click', function() {
         alert(marker.getPosition());
     });
+    */
 }
 
 var colors = ['#6B5B95','#FEB236','#D64161','#FF7525']
@@ -36,7 +62,7 @@ var rt_idx = 1;
 function calcRoute(route, id) {
 
     var color =  rt_idx % colors.length;
-    alert(color)
+    //alert(color)
 
     var directionsRenderer = new google.maps.DirectionsRenderer({
         suppressMarkers: true,
@@ -111,7 +137,7 @@ function initMap() {
     map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 24});
 
 
-    //counters.forEach(putMarker);
+    counters.forEach(putMarker);
 
     for (let i = 0; i < JSONroutes.length; i++) {
         calcRoute(JSONroutes[i], i);
