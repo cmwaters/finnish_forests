@@ -109,7 +109,7 @@ function initMap() {
     map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 24});
 
 
-    counters.forEach(putMarker);
+    //counters.forEach(putMarker);
 
     for (let i = 0; i < JSONroutes.length; i++) {
         calcRoute(JSONroutes[i], i);
