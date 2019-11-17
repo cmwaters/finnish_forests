@@ -27,7 +27,8 @@ function populate() {
             let route = new RouteModel({
                 name: routes[i].name,
                 status: routes[i].status,
-                coordinates: routes[i].coordinates
+                coordinates: routes[i].coordinates,
+                waypoints: routes[i].waypoints
             });
             route.save()
         } catch (e) {

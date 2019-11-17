@@ -1290,7 +1290,7 @@
 
 						// Webkit/Opera - :checked should return selected option elements
 						// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-						// IE8 throws error here and will not see later tests
+						// IE8 throws error here and will not see later scripts
 						if ( !el.querySelectorAll(":checked").length ) {
 							rbuggyQSA.push(":checked");
 						}
@@ -1320,7 +1320,7 @@
 						}
 
 						// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
-						// IE8 throws error here and will not see later tests
+						// IE8 throws error here and will not see later scripts
 						if ( el.querySelectorAll(":enabled").length !== 2 ) {
 							rbuggyQSA.push( ":enabled", ":disabled" );
 						}
@@ -5847,7 +5847,7 @@
 		}
 	}
 
-// Fix IE bugs, see support tests
+// Fix IE bugs, see support scripts
 	function fixInput( src, dest ) {
 		var nodeName = dest.nodeName.toLowerCase();
 
@@ -6244,7 +6244,7 @@
 
 	( function() {
 
-		// Executing both pixelPosition & boxSizingReliable tests require only one layout
+		// Executing both pixelPosition & boxSizingReliable scripts require only one layout
 		// so they're executed at the same time to save the second computation.
 		function computeStyleTests() {
 
