@@ -23,6 +23,10 @@ const routeSchema = new mongoose.Schema({
     last_updated: {
         type: Date,
         default: Date.now()
+    },
+    ranking: {
+        type: Number,
+        default: 0
     }
 
 });

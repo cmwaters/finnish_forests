@@ -4,8 +4,6 @@ const routes = require("./data");
 const RouteModel = require('../models/routes');
 const SensorModel = require('../models/sensors');
 const json_data = require('../../data/counter_simple');
-
-console.log(json_data);
 let sensor_data = json_data;
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true});
@@ -21,7 +19,6 @@ db.once('open', () => {
 
 function populate() {
     for (let i = 0; i < routes.length; i++) {
-        console.log(routes[i].name);
         try {
             let route = new RouteModel({
                 name: routes[i].name,
@@ -49,9 +46,5 @@ function populate() {
         }
     }
 }
-
-
-
-module.exports = populate();
 
 
