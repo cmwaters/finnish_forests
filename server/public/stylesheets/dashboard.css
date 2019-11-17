@@ -44,8 +44,12 @@ a {
   padding: 15px;
 }
 
-
-
 .logo {
   width: 35px;
+}
+
+.close_route {
+  width:22px;
+  margin-top:-35px;
+  float:right;
 }

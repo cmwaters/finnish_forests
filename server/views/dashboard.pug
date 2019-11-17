@@ -8,15 +8,13 @@ block content
         div.route_container(id=route._id)
             .header
                 h5 #{route.name}
+                img.close_route(src='/images/close.png')
 
             p Status 
                 //#{route.status}
                 label.switch
                     input(type='checkbox', title='Set status', checked)
                     span.slider.round
-
-                img(src='/images/close.png', width='30', style='float:right;')
-
 
                 div(id="chart_div" + route._id)
 

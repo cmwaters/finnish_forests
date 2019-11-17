@@ -17,8 +17,8 @@ const routeSchema = new mongoose.Schema({
         lng: {type: Number, required: true}
     }],
     waypoints: [{
-        lat: {type: Number},
-        lng: {type: Number}
+        latitude: {type: Number},
+        longitude: {type: Number}
     }],
     last_updated: {
         type: Date,

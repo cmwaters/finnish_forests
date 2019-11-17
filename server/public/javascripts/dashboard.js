@@ -4,7 +4,6 @@ var map;
 var marker = [];
 var directionsService;
 var active_route = null;
-var clickedNode = false;
 
 var routes = document.currentScript.getAttribute('routes');
 var JSONroutes = JSON.parse(routes);
@@ -122,7 +121,6 @@ function initMap() {
 }
 
 function showRoute(route) {
-    clickedNode = true;
     if (active_route !== null && active_route !== route._id) {
         $("#" + active_route).animate({right: '-400px'});
         setTimeout(function () {
@@ -136,14 +134,8 @@ function showRoute(route) {
     }
 }
 
-$(window).click(function() {
-    setTimeout(function () {
-        if (active_route !== null && !clickedNode) {
-            $("#" + active_route).animate({right: '-400px'});
-            active_route = null;
-        } else {
-            clickedNode = false;
-        }
-    }, 200)
+$(".close_route").click(function() {
+    $("#" + route._id).animate({right: '-400px'});
+    active_route = null;
 });
 
