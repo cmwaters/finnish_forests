@@ -21,6 +21,11 @@ async function setup() {
             console.log("Updating the prediction values for the route: " + routes[i].name);
             let result = await update_prediction(routes[i]);
             routes[i].prediction = result;
+            var sum = 0;
+            for (let j = 0; j < result.length; j++) {
+                sum += result[j];
+            }
+            routes[i].ranking = sum;
             routes[i].save();
         }
     }

@@ -7,5 +7,6 @@ db.on('error', (error) => console.error(error));
 db.once('open', () => {
     console.log("Connected to database");
     db.collection('routemodels').drop();
+    db.collection('sensormodels').drop();
     db.close();
 });
