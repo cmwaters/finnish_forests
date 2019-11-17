@@ -24,10 +24,9 @@ google.charts.load('current', {'packages':['corechart']});
 
         // Set chart options
 
-        var options = {'title':'Traffic prediction for ' + today,
-                       'width':400,
+        var options = {'width':400,
                        'height':300,
-                       'colors': ['Green'],
+                       'colors': ['#222a38'],
                        'backgroundColor': { fill:'transparent' },
                        'chartArea': {'width': '80%', 'height': '80%'},
                        'legend': {'position': 'bottom'}

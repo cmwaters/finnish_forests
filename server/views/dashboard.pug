@@ -10,19 +10,26 @@ block content
                 h6 #{route.name}
                 img.close_route(src='/images/close.png')
 
-            p Status 
+            div(style="margin:15px; height:60px;")
+                p(style="display:inline;") Status
+                if route.status === "Open"
+                    a.button_deactivated(href="/dashboard/" + route._id +"/close") Close
+                    a.button_activated(href="/dashboard/" + route._id + "/open") Open
+                else
+                    a.button_activated(href="/dashboard/" + route._id + "/close") Closed
+                    a.button_deactivated(href="/dashboard/" + route._id + "/open") Open
                 //#{route.status}
-                label.switch
-                    input(type='checkbox', title='Set status', checked)
-                    span.slider.round
-
+                //label.switch
+                //    input(type='checkbox', title='Set status', checked)
+                //    span.slider.round
+            div(style="margin-top:-45px; margin-left:15px;")
+                p(style="margin-bottom:-10px;") Today's Projected Traffic
                 div(id="chart_div" + route._id)
 
-                br
-                br
-                span(style='float:right;') Delete route
-                    a(href='delete/' + route._id)
-                        img(src='/images/garbage.png', width='30')
+            p(style="margin-left:15px;") Alerts
+
+            div(style="text-align:center;")
+                a.delete_route(href='delete/' + route._id, style="float:center;") Delete Route
 
     script(src="/javascripts/dashboard.js" routes=routes)
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzaieIWmZLqo3wQ00iTSWuz56qQ4D_cc&callback=initMap', async, defer)         

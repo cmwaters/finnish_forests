@@ -10,6 +10,7 @@ var JSONroutes = JSON.parse(routes);
 var start = JSONroutes[1].coordinates[0];
 var end = JSONroutes[1].coordinates[1];
 
+
 var counters = [
     {lat: 60.303525451006834, lng: 24.550391008969527},
     {lat: 60.27581963490531, lng: 24.463689284278516},

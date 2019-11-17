@@ -6,11 +6,11 @@ html, body {
 
 body {
   background-color: #f5f5f5;
-  padding: 50;
 }
 
-a {
-  color: #00B7FF;
+a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 #map_container {
@@ -53,4 +53,58 @@ a {
   width:22px;
   margin-top:-30px;
   float:right;
+}
+
+.button_deactivated {
+  margin-top:-5px;
+  display: inline;
+  border: 2px solid #222a38;
+  color: #222a38;
+  padding: 4px;
+  padding-top:2px;
+  padding-bottom: 2px;
+  float:right;
+  border-radius: 4px;
+  margin-left:20px;
+  cursor:pointer;
+}
+
+.button_deactivated:hover {
+  text-decoration: none;
+  color:#273b5c;;
+}
+
+.button_activated {
+  margin-left:20px;
+  cursor:pointer;
+  margin-top:-5px;
+  display: inline;
+  float:right;
+  border: 2px solid #222a38;
+  background-color: #222a38;
+  color: #eee;
+  padding: 8px;
+  padding-top:2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
+}
+
+.button_activated:hover {
+  text-decoration: none;
+  color:#eee;
+}
+
+.delete_route {
+  cursor:pointer;
+  display: inline;
+  margin:auto;
+  margin-top:30px;
+  width: 130px;
+  border: 2px solid #222a38;
+  background-color: #222a38;
+  color: #eee;
+  padding: 8px;
+  padding-top:2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
 }

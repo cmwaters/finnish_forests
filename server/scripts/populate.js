@@ -24,7 +24,8 @@ function populate() {
                 name: routes[i].name,
                 status: routes[i].status,
                 coordinates: routes[i].coordinates,
-                waypoints: routes[i].waypoints
+                waypoints: routes[i].waypoints,
+                duration: routes[i].duration
             });
             route.save()
         } catch (e) {
