@@ -1,6 +1,6 @@
 const routes = [
     {
-        name: "Route 1",
+        name: "Punarinnankierros Trail - 2.4 km",
         status: "Open",
         coordinates: [
             {
@@ -15,10 +15,16 @@ const routes = [
                 lat: 60.305996,
                 lng: 24.511531,
             }
+        ],
+        waypoints: [
+            {
+                lat: 60.30685,
+                lng: 24.524148,
+            }
         ]
     },
     {
-        name: "Route 2",
+        name: "Korpinkierros Trail - 6.4 km",
         status: "Open",
         coordinates: [
             {
@@ -33,10 +39,16 @@ const routes = [
                 lat: 60.312672,
                 lng: 24.453176,
             }
+        ],
+        waypoints: [
+            {
+                lat: 60.321092,
+                lng: 24.448947,
+            }
         ]
     },
     {
-        name: "Route 3",
+        name: "Haukankierros Trail - 8.5 km",
         status: "Open",
         coordinates: [
             {
@@ -55,10 +67,20 @@ const routes = [
                 lat: 60.373399,
                 lng: 24.497253,
             }
+        ],
+        waypoints: [
+            {
+                lat: 60.374597,
+                lng: 24.481546,
+            },
+            {
+                lat: 60.349246,
+                lng: 24.506887,
+            }
         ]
     },
     {
-        name: "Route 4",
+        name: "Kaarniaispolku Nature Trail - 10.2 km",
         status: "Open",
         coordinates: [
             {
@@ -81,10 +103,24 @@ const routes = [
                 lat: 60.292777,
                 lng: 24.532155,
             }
+        ],
+        waypoints: [
+            {
+                lat: 60.305623,
+                lng: 24.509018,
+            },
+            {
+                lat: 60.31505,
+                lng: 24.506231,
+            },
+            {
+                lat: 60.305381,
+                lng: 24.522423,
+            },
         ]
     },
     {
-        name: "Route 5",
+        name: "Veikkola-Salmi Trail - 13 km",
         status: "Open",
         coordinates: [
             {
@@ -103,10 +139,20 @@ const routes = [
                 lat: 60.293415,
                 lng: 24.558732,
             }
+        ],
+        waypoints: [
+            {
+                lat: 60.311918,
+                lng: 24.511138,
+            },
+            {
+                lat: 60.321852,
+                lng: 24.512457,
+            }
         ]
     },
     {
-        name: "Route 6",
+        name: "Haukkalampi-Haltia Trail - 5 km",
         status: "Open",
         coordinates: [
             {
@@ -120,6 +166,12 @@ const routes = [
             {
                 lat: 60.293086,
                 lng: 24.558559,
+            }
+        ],
+        waypoints: [
+            {
+                lat: 60.300252,
+                lng: 24.567617
             }
         ]
     },

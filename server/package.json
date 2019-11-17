@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node ../server/bin/www",
     "nodemon": "nodemon ../server/bin/www",
-    "populate": "node tests/populate.js",
-    "clear": "node tests/clear.js"
+    "populate": "node scripts/populate.js",
+    "clear": "node scripts/clear.js",
+    "init": "node scripts/initialise.js"
   },
   "dependencies": {
     "bootstrap": "4.3",
