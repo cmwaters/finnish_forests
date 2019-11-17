@@ -6,7 +6,7 @@ const SensorModel = require('../models/sensors');
 const json_data = require('../../data/counter_simple');
 
 console.log(json_data);
-let sensor_data = json_data;//JSON.parse(json_data);
+let sensor_data = json_data;
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -17,7 +17,6 @@ db.once('open', () => {
     setTimeout(function() {
         db.close();
     }, 200);
-
 });
 
 function populate() {
@@ -53,6 +52,6 @@ function populate() {
 
 
 
-// module.exports = populate();
+module.exports = populate();
 
 

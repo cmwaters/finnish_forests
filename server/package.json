@@ -6,7 +6,8 @@
     "start": "node ../server/bin/www",
     "nodemon": "nodemon ../server/bin/www",
     "populate": "node scripts/populate.js",
-    "clear": "node scripts/clear.js"
+    "clear": "node scripts/clear.js",
+    "init": "node scripts/initialise.js"
   },
   "dependencies": {
     "bootstrap": "4.3",

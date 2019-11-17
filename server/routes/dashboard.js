@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('delete/:id', async (req, res) => {
     try {
         let route = await RouteModel.findById(req.params.id);
         route.remove();
