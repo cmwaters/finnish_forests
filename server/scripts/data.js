@@ -18,8 +18,8 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.30685,
-                lng: 24.524148,
+                latitude: 60.30685,
+                longitude: 24.524148,
             }
         ]
     },
@@ -42,8 +42,8 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.321092,
-                lng: 24.448947,
+                latitude: 60.321092,
+                longitude: 24.448947,
             }
         ]
     },
@@ -70,12 +70,12 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.374597,
-                lng: 24.481546,
+                latitude: 60.374597,
+                longitude: 24.481546,
             },
             {
-                lat: 60.349246,
-                lng: 24.506887,
+                latitude: 60.349246,
+                longitude: 24.506887,
             }
         ]
     },
@@ -106,16 +106,16 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.305623,
-                lng: 24.509018,
+                latitude: 60.305623,
+                longitude: 24.509018,
             },
             {
-                lat: 60.31505,
-                lng: 24.506231,
+                latitude: 60.31505,
+                longitude: 24.506231,
             },
             {
-                lat: 60.305381,
-                lng: 24.522423,
+                latitude: 60.305381,
+                longitude: 24.522423,
             },
         ]
     },
@@ -142,12 +142,12 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.311918,
-                lng: 24.511138,
+                latitude: 60.311918,
+                longitude: 24.511138,
             },
             {
-                lat: 60.321852,
-                lng: 24.512457,
+                latitude: 60.321852,
+                longitude: 24.512457,
             }
         ]
     },
@@ -170,8 +170,8 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.300252,
-                lng: 24.567617
+                latitude: 60.300252,
+                longitude: 24.567617
             }
         ]
     },
@@ -212,12 +212,12 @@ const routes = [
         ],
         waypoints: [
             {
-                lat: 60.313926,
-                lng: 24.461803,
+                latitude: 60.313926,
+                longitude: 24.461803,
             },
             {
-                lat: 60.312009,
-                lng: 24.444428,
+                latitude: 60.312009,
+                longitude: 24.444428,
             }
         ]
     },
