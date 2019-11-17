@@ -57,7 +57,14 @@ async function update_prediction(route) {
   let closest_sensor = await find_closest_sensor(route);
   console.log(closest_sensor.latitude);
   let now = new Date;
-  // console.log(closest_sensor.hourly[now.getHours()]);
+  let hour_factor = closest_sensor.hourly[now.getHours()];
+  let day = 6;
+  if (now.getDay() !== 0) {
+    day = now.getDay() - 1;
+  }
+  let daily_factor = closest_sensor.daily[day];
+  let monthly_factor = closest_sensor.monthly[now.getMonth()];
+  return ((hour_factor/365) + (daily_factor/52/24) + (monthly_factor/30/24))/3;
 }
 
 async function find_closest_sensor(route) {

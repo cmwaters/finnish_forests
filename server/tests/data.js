@@ -171,7 +171,7 @@ const routes = [
         waypoints: [
             {
                 lat: 60.300252,
-                lng: 24.567617,
+                lng: 24.567617
             }
         ]
     },
