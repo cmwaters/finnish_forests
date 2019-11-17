@@ -58,7 +58,7 @@ google.charts.load('current', {'packages':['corechart']});
             {
               twod.push([6 + i,predictions[i]]);
             }
-            console.log(twod);
+            //console.log(twod);
             data.addRows(twod);
 
 

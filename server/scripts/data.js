@@ -2,6 +2,8 @@ const routes = [
     {
         name: "Punarinnankierros Trail - 2.4 km",
         status: "Open",
+        duration: "50 minutes",
+        description: "Difficult terrain",
         coordinates: [
             {
                 lat: 60.306601,
@@ -26,6 +28,8 @@ const routes = [
     {
         name: "Korpinkierros Trail - 6.4 km",
         status: "Open",
+        duration: "2 hours 30 minutes",
+        description: "Easy trail, open rocky ground",
         coordinates: [
             {
                 lat: 60.311838,
@@ -50,6 +54,8 @@ const routes = [
     {
         name: "Haukankierros Trail - 8.5 km",
         status: "Open",
+        duration: "3 hours",
+        description: "Challenging trail",
         coordinates: [
             {
                 lat: 60.374321,
@@ -82,6 +88,8 @@ const routes = [
     {
         name: "Kaarniaispolku Nature Trail - 10.2 km",
         status: "Open",
+        duration: "3 hours 40 minutes",
+        description: "Challenging due to height differences, no winter maintenance",
         coordinates: [
             {
                 lat: 60.292644,
@@ -122,6 +130,8 @@ const routes = [
     {
         name: "Veikkola-Salmi Trail - 13 km",
         status: "Open",
+        duration: "4 hours 40 minutes",
+        description: "Suitable for biking",
         coordinates: [
             {
                 lat: 60.294254,
@@ -154,6 +164,8 @@ const routes = [
     {
         name: "Haukkalampi-Haltia Trail - 5 km",
         status: "Open",
+        duration: "2 hours",
+        description: "Specially designed for schoolchildren ",
         coordinates: [
             {
                 lat: 60.293137,
@@ -178,6 +190,8 @@ const routes = [
     {
         name: "Matalajarvi Trail - 5.1 km",
         status: "Open",
+        duration: "2 hours 6 minutes",
+        description: "Easily accessable with public transport. Bird watching opportunities.",
         coordinates: [
             {
                 lat: 60.249433,
@@ -192,6 +206,8 @@ const routes = [
     {
         name: "Kaarniaispolku Trail - 11.8 km",
         status: "Open",
+        duration: "4 hours 20 minutes",
+        description: "Can be used for cross-country skiing",
         coordinates: [
             {
                 lat: 60.298740,
