@@ -12,18 +12,6 @@ google.charts.load('current', {'packages':['corechart']});
       // draws it.
       function drawChart() {
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Hour');
-        data.addColumn('number', 'Visitors');
-        data.addRows([
-          ['12', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
-
         // Set chart options
         var options = {'title':'Traffic prediction today',
                        'width':400,
@@ -37,6 +25,33 @@ google.charts.load('current', {'packages':['corechart']});
         // Instantiate and draw our chart, passing in some options.
         //alert('chart_div' + JSONroute._id)
         for (let i = 0; i < JSONroutes.length; i++) {
+            
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Hour');
+            data.addColumn('number', 'Visitors');
+            /*
+            data.addRows([
+              ['12', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+            */
+
+            
+            //var dataTableData = google.visualization.arrayToDataTable(JSONroutes[i].prediction);
+            predictions = JSONroutes[i].prediction;
+            var twod = [];
+            for(let i = 0; i < predictions.length;i++)
+            {
+              twod.push([i,predictions[i]]);
+            }
+            console.log(twod);
+            data.addRows(twod);
+
+
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div' + JSONroutes[i]._id));
             chart.draw(data, options);
         }

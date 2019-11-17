@@ -23,7 +23,8 @@ var counters = [
 ]
 
 function putMarker(value, index, array) {
-    var marker = new google.maps.Marker({position: value, map: map});
+    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+    var marker = new google.maps.Marker({position: value, map: map, icon: image });
 
     marker.addListener('click', function() {
         alert(marker.getPosition());
@@ -108,7 +109,7 @@ function initMap() {
     map = new google.maps.Map(map_container, {zoom: 12, center: center, controlSize: 24});
 
 
-    //counters.forEach(putMarker);
+    counters.forEach(putMarker);
 
     for (let i = 0; i < JSONroutes.length; i++) {
         calcRoute(JSONroutes[i], i);

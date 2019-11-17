@@ -6,9 +6,9 @@ const SensorModel = require('../models/sensors');
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
-db.once('open', () => {
+db.once('open', async () => {
     console.log("Connected to database");
-    setup();
+    await setup();
     setTimeout(function() {
         db.close();
     }, 200);
