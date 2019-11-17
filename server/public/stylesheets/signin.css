@@ -57,3 +57,16 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.navbar {
+  display: none;
+}
+.front_img {
+  position: absolute;
+  top: 50px;
+  left: 45%;
+  width: 10%;
+}
+
+.front_img h1{
+  
+}

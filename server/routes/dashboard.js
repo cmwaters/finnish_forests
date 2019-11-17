@@ -23,11 +23,15 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
         let route = await RouteModel.findById(req.params.id);
+        console.log(route.name)
         route.remove();
-        res.redirect(req.originalUrl);
+        //res.redirect(req.baseUrl + '/dashboard');
+        
+        res.status(201).json({ msg: `deleted route with id ${req.params.id}` });
+        
     } catch (e) {
         res.status(500).json({ msg: e.message })
     }

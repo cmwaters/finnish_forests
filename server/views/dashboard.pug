@@ -1,10 +1,30 @@
 extends header
 
 block content
-  #map_container
-  each route in routes
-      div.route_container(id=route._id)
-          .header
-              h5 #{route.name}
-  script(src="/javascripts/dashboard.js" routes=routes)
-  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzaieIWmZLqo3wQ00iTSWuz56qQ4D_cc&callback=initMap', async, defer)
+    #map_container
+    script(src="https://www.gstatic.com/charts/loader.js")
+    script(src="/javascripts/chart.js" routes=routes)
+    each route in routes
+        div.route_container(id=route._id)
+            .header
+                h5 #{route.name}
+
+            p Status 
+                //#{route.status}
+                label.switch
+                    input(type='checkbox', title='Set status', checked)
+                    span.slider.round
+
+                img(src='/images/close.png', width='30', style='float:right;')
+
+
+                div(id="chart_div" + route._id)
+
+                br
+                br
+                span(style='float:right;') Delete route
+                    a(href='delete/' + route._id)
+                        img(src='/images/garbage.png', width='30')
+
+    script(src="/javascripts/dashboard.js" routes=routes)
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzaieIWmZLqo3wQ00iTSWuz56qQ4D_cc&callback=initMap', async, defer)         
